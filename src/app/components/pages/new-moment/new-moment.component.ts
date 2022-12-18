@@ -20,14 +20,13 @@ export class NewMomentComponent implements OnInit {
     private router: Router
   ){} // Ser private é um dos requisitos para se utilizar ele aqui
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   async createHandler(moment: IMoment){
-    // Tem duas formas comuns de trabalhar com form: Formato JSON & FORM DATA(Já incluso no JS)
+    // Tem duas formas comuns de trabalhar com form: Formato JSON(se não precisasse de arquivos) & FORM DATA(Já incluso no JS)
     console.log('Deu boa!');
 
+    //Trabalhando com FORM DATA
     const formData = new FormData();
 
     formData.append('title', moment.title);

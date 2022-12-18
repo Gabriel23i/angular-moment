@@ -11,7 +11,7 @@ import { MessagesService } from 'src/app/services/messages/messages.service';
 })
 export class MessagesComponent implements OnInit {
 
-  faTimes = faTimes;
+  public faTimes = faTimes;
 
   constructor(public messagesService: MessagesService){ }
 

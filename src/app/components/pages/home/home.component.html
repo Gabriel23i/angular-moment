@@ -11,7 +11,7 @@
     </form>
   </div>
   <!-- form busca -->
-  <div *ngIf="moments.length > 0; else noMoments">
+  <div *ngIf="moments.length; else noMoments">
     <div class="moments-container">
       <div class="moment" *ngFor="let moment of moments">
         <img src="{{baseApiUrl}}uploads/{{moment.image}}" alt="">

@@ -14,16 +14,18 @@ export class MomentFormComponent implements OnInit {
 
   @Input() btnText!: string; // O que é recebido no component
 
-  momentForm!: FormGroup;
+  @Input() momentData: IMoment | null = null;
+
+  public momentForm!: FormGroup;
 
   constructor(){}
 
   //declaro todos os campos que vai ter no formulário
   ngOnInit(): void{
     this.momentForm = new FormGroup({
-      id: new FormControl(''),
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
+      id: new FormControl(this.momentData ? this.momentData.id : ''),
+      title: new FormControl(this.momentData ? this.momentData.title : '', [Validators.required]),
+      description: new FormControl(this.momentData ? this.momentData.description :'', [Validators.required]),
       image: new FormControl('')
     });
   }
